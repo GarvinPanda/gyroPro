@@ -66,35 +66,33 @@ class Index extends React.Component {
             }
         });
 
-        const barrel = app.stage.addChild(PIXI.Sprite.from("//yun.duiba.com.cn/aurora/assets/aadb6da757437748e254d4b9ed09f7efb8248b12.jpg"));
+        const barrel = app.stage.addChild(PIXI.Sprite.from(" //yun.duiba.com.cn/aurora/assets/b2dadeab52179421cff68b7e32468ee6b0d563d2.png"));
 
         //轨道
         this.line = new PIXI.Graphics();
-        this.line.lineStyle(2, 0xffffff, 0.8);
+        this.line.lineStyle(2, 0xffffff, 0);
         this.line.moveTo(firstList[0].x, firstList[0].y);
         app.stage.addChild(this.line);
 
 
-        //真是画线
+        //真实画线
         this.realLine = new PIXI.Graphics();
         this.realLine.lineStyle(8, 0xf4813e, 1);
         this.realLine.moveTo(firstList[0].x, firstList[0].y);
         app.stage.addChild(this.realLine);
 
         firstList.forEach((item, index) => {
-
             if (index % 3 == 0) {
                 if (index > 1)
                     this.line.moveTo(firstList[index - 1].x, firstList[index - 1].y)
                 this.line.lineTo(item.x, item.y);
             }
-
         });
 
         //小球
-        this.ball = app.stage.addChild(PIXI.Sprite.from("//yun.duiba.com.cn/aurora/assets/ed6f3a683c6a20633ad61d96603bce88b4a0d976.png"));
-        this.ball.anchor.set(this.ball.width / 2, this.ball.height / 2);
-        this.ball.position.set(this.currentPoint.element.x, this.currentPoint.element.y)
+        // this.ball = app.stage.addChild(PIXI.Sprite.from("//yun.duiba.com.cn/aurora/assets/ed6f3a683c6a20633ad61d96603bce88b4a0d976.png"));
+        // this.ball.anchor.set(this.ball.width / 2, this.ball.height / 2);
+        // this.ball.position.set(this.currentPoint.element.x, this.currentPoint.element.y)
 
     }
 
@@ -184,9 +182,7 @@ class Index extends React.Component {
 
     /** 判断方向 */
     onCheckDir = (element = {}, nextElement = {}) => {
-
         let _dir = "", disX = element.x - nextElement.x, disY = element.y - nextElement.y;
-
         //判断大方向
         if (Math.abs(disX) > Math.abs(disY)) {
             //判断左右
@@ -205,9 +201,7 @@ class Index extends React.Component {
                 _dir = "B";
             }
         }
-
         return this.curerentDir.indexOf(_dir) > -1 ? true : false;
-
     }
 
     /** 点击 */

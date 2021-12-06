@@ -47,8 +47,4 @@ export default function get2LoopList() {
     this.getTail = function () {
         return tail;
     };
-
-    this.size = function () {
-        return length;
-    };
 }

@@ -11,8 +11,8 @@ class App extends Component {
 
     render() {
         return (
-            // <Index />
-            <Brush />
+            <Index />
+            // <Brush />
         );
     }
 }
